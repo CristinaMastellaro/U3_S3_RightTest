@@ -1,0 +1,9 @@
+.card-radio {
+  /* width: 200px; */
+  width: 100%;
+  border: 0;
+}
+
+.card-radio .card-body {
+  padding: 0;
+}

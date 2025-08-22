@@ -1,0 +1,39 @@
+.col-card {
+  width: 400px;
+}
+
+.card-news {
+  width: 390px;
+  border: 0;
+  flex-grow: 0;
+}
+
+.card-news .card-body {
+  padding: 0.5em 0;
+}
+
+.card-news img {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.first {
+  font-size: 0.8em;
+  opacity: 75%;
+}
+
+.second {
+  height: 3em;
+}
+
+@media screen and (min-width: 1200px) {
+  .card-news {
+    width: 100%;
+  }
+  .second {
+    height: 2em;
+  }
+  .col-card {
+    width: 50%;
+  }
+}
