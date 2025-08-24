@@ -68,36 +68,6 @@ const Homepage = ({
           <MyFooter changeLang={changeLang} />
         </Col>
       </Row>
-      {/* <Row className="d-lg-none">
-        <MyNavSmall
-          img={img}
-          title={title}
-          author={author}
-          widthPlayer={widthPlayer}
-        />
-        <News />
-        <RadioEpisodes shownEpisodes={shownEpisodes} />
-        <NewMusic setPlayer={passSetImg} shownSongs={shownSongs} />
-        <ExploreElse />
-        <MyFooter />
-      </Row>
-      <Row className="d-none d-lg-block w-100 flex-nowrap">
-        <Col lg={9} className="ms-auto mt-5 pt-3 px-0 z-0">
-          <MyNavBig
-            img={img}
-            title={title}
-            author={author}
-            widthPlayer={widthPlayer}
-          />
-          <div className="p-3 pt-0">
-            <News />
-            <RadioEpisodes shownEpisodes={shownEpisodes} />
-            <NewMusic setPlayer={passSetImg} shownSongs={shownSongs} />
-            <ExploreElse />
-          </div>
-          <MyFooter />
-        </Col>
-      </Row> */}
     </Container>
   );
 };

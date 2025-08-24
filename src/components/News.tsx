@@ -2,7 +2,6 @@ import { Container, Row } from "react-bootstrap";
 import image1 from "../assets/assetsDownload/images/1a.png";
 import image2 from "../assets/assetsDownload/images/1b.png";
 import SingleNew from "./SingleNew";
-// import image3 from "../assets/assetsDownload/images/1c.png";
 
 interface NewsProps {
   language: string;
@@ -15,7 +14,7 @@ const News = ({ language }: NewsProps) => {
     "Ecco la nuova casa della musica latina",
   ];
   const engMessages = [
-    "Relax, we'll think about everything. Listen to Apple Music Chill",
+    "Relax, we'll take care of everything. Listen to Apple Music Chill",
     "Here's the new house for latin music",
   ];
 

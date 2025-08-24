@@ -7,14 +7,7 @@ import { BiSearch } from "react-icons/bi";
 import appleLogo from "../assets/assetsDownload/logos/music.svg";
 import "../css/myNavSmall.css";
 import Player from "./Player";
-
-interface PlayerProps {
-  img: string;
-  title: string;
-  author: string;
-  widthPlayer: string;
-  language: string;
-}
+import PlayerProps from "../types/Player";
 
 const MyNavBig = ({
   img,
@@ -67,6 +60,7 @@ const MyNavBig = ({
                 title={title}
                 author={author}
                 widthPlayer={widthPlayer}
+                language={language}
               />
             </Col>
             <Col lg={2} xxl={1} className="px-0">
@@ -78,49 +72,6 @@ const MyNavBig = ({
         </Col>
       </Row>
     </Container>
-    // <Navbar
-    //   // expand="lg"
-    //   bg="dark"
-    //   data-bs-theme="dark"
-    //   className="justify-content-between d-none d-lg-block"
-    // >
-    //   <Container fluid className="mx-4 d-flex flex-column">
-    //     {/* <Navbar.Toggle
-    //       aria-controls="basic-navbar-nav"
-    //       className="border border-0 shadow-0"
-    //     >
-    //       <BiMenu className="fs-1 text-danger" />
-    //     </Navbar.Toggle> */}
-    //     <Navbar.Brand href="#home" className="d-flex align-items-center gap-1">
-    //       <Image src={appleLogo} alt="Logo AppleMusic" className="invert" />
-    //     </Navbar.Brand>
-    //     <Nav.Link href="#action/3.1" className="text-danger fw-bold">
-    //       Accedi
-    //     </Nav.Link>
-    //     {/* <Navbar.Collapse id="basic-navbar-nav"> */}
-    //     <Nav className="me-auto my-3">
-    //       <div className="border border-1 p-2 rounded-2">
-    //         <BiSearch className="text-danger me-1" />
-    //         <input
-    //           type="text"
-    //           placeholder="Cerca"
-    //           className="bg-dark border-0"
-    //         />
-    //       </div>
-    //     </Nav>
-    //     <Nav className="text-white mt-1 d-flex flex-row align-items-center">
-    //     </Nav>
-    //     <Nav className="text-white mt-1 d-flex flex-row align-items-center">
-    //       <BiHome className="text-danger me-1" /> Home
-    //       <BiGrid className="text-danger me-1" /> Novità
-    //       <BiBroadcast className="text-danger me-1" /> Radio
-    //     </Nav>
-    //     <Nav className="text-white mt-1 d-flex flex-row align-items-center">
-    //     </Nav>
-    //     {/* </Navbar.Collapse> */}
-    //   </Container>
-    //   <Player img={img} title={title} author={author} />
-    // </Navbar>
   );
 };
 

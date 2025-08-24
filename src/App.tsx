@@ -1,13 +1,6 @@
 import "./App.css";
-// import MyFooter from "./components/MyFooter";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-// import ExploreElse from "./components/ExploreElse";
-// import NewMusic from "./components/NewMusic";
-// import RadioEpisodes from "./components/RadioEpisodes";
-// import News from "./components/News";
-// import MyNavBig from "./components/MyNavBig";
-// import MyNavSmall from "./components/MyNavSmall";
 import Homepage from "./components/Homepage";
 import { useEffect, useState } from "react";
 
@@ -39,7 +32,7 @@ function App() {
     }
     if (windowWidth >= 700 && windowWidth < 992) {
       setShownSongs(8);
-      setShownEpisodes(5);
+      setShownEpisodes(4);
       setWidthPlayer("sm");
     }
     if (windowWidth >= 992) {
@@ -60,10 +53,10 @@ function App() {
 
   window.addEventListener("resize", updateSize);
 
+  // Cose in più da fare: mettere il cursore ovunque, dove serve
+
   return (
     <>
-      {/* <MyNavBig img={img} title={title} author={author} />
-      <MyNavSmall img={img} title={title} author={author} /> */}
       <Homepage
         img={img}
         title={title}
@@ -73,12 +66,6 @@ function App() {
         shownSongs={shownSongs}
         widthPlayer={widthPlayer}
       />
-      {/* <News />
-      <RadioEpisodes shownEpisodes={shownEpisodes} />
-      <NewMusic setPlayer={passSetImg} shownSongs={shownSongs} />
-      <ExploreElse /> */}
-
-      {/* <Player img={img} title={title} author={author} /> */}
     </>
   );
 }

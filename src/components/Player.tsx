@@ -11,13 +11,7 @@ import "../css/player.css";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import image1 from "../assets/assetsDownload/logos/apple.svg";
-
-interface PlayerProps {
-  img: string;
-  title: string;
-  author: string;
-  widthPlayer: string;
-}
+import PlayerProps from "../types/Player";
 
 const Player = ({ img, title, author, widthPlayer }: PlayerProps) => {
   const [width, setWidth] = useState("");
@@ -35,7 +29,6 @@ const Player = ({ img, title, author, widthPlayer }: PlayerProps) => {
   }, [widthPlayer]);
 
   useEffect(() => {
-    // console.log("repeat", repeat);
     if (repeat) {
       setClassRepeat("selected");
     } else {

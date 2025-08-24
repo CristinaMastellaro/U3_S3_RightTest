@@ -13,7 +13,6 @@ const SingleMusic = ({ song, setPlayer }: SingleMusicProps) => {
       onClick={() =>
         setPlayer(song.album.cover_small, song.title_short, song.artist.name)
       }
-      // className="flex-grow-1"
     >
       <Card bg="black" data-bs-theme="dark" className="card-music">
         <Card.Img

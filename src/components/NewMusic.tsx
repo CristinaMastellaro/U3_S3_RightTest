@@ -14,33 +14,7 @@ const NewMusic = ({ setPlayer, shownSongs, language }: NewMusicProps) => {
   const endpoint =
     "https://striveschool-api.herokuapp.com/api/deezer/search?q=sea";
 
-  // let windowWidth = document.body.clientWidth;
-  // let windowWidth = window.innerWidth;
-
   const [songs, setSongs] = useState<Daum[]>([]);
-  // const [shownSongs, setShownSongs] = useState(6);
-
-  // const changeShownSongs = () => {
-  //   if (windowWidth < 700) {
-  //     setShownSongs(6);
-  //   }
-  //   if (windowWidth >= 700 && windowWidth < 992) {
-  //     setShownSongs(8);
-  //   }
-  //   if (windowWidth >= 992) {
-  //     setShownSongs(10);
-  //   }
-  // };
-
-  // function getWidth() {
-  //   windowWidth = Math.max(
-  //     document.body.scrollWidth,
-  //     document.documentElement.scrollWidth,
-  //     document.body.offsetWidth,
-  //     document.documentElement.offsetWidth,
-  //     document.documentElement.clientWidth
-  //   );
-  // }
 
   const getSongs = () => {
     fetch(endpoint)
@@ -61,10 +35,6 @@ const NewMusic = ({ setPlayer, shownSongs, language }: NewMusicProps) => {
   useEffect(() => {
     getSongs();
   }, []);
-
-  // useEffect(() => {
-  //   changeShownSongs();
-  // }, [windowWidth]);
 
   return (
     <Container fluid className="px-4">

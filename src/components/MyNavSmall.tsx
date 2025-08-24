@@ -10,14 +10,7 @@ import { BiMenu } from "react-icons/bi";
 import appleLogo from "../assets/assetsDownload/logos/music.svg";
 import "../css/myNavSmall.css";
 import Player from "./Player";
-
-interface PlayerProps {
-  img: string;
-  title: string;
-  author: string;
-  widthPlayer: string;
-  language: string;
-}
+import PlayerProps from "../types/Player";
 
 const MyNavSmall = ({
   img,
@@ -68,76 +61,13 @@ const MyNavSmall = ({
             <BiBroadcast className="text-danger me-1" /> Radio
           </Nav>
         </Navbar.Collapse>
-        {/* <button
-          aria-controls="basic-navbar-nav"
-          type="button"
-          aria-label="Toggle navigation"
-          className="text-danger border border-0 navbar-toggler collapsed"
-        >
-          <BiMenu className="fs-1" />
-        </button> */}
-        {/* <button
-          aria-controls="basic-navbar-nav"
-          type="button"
-          aria-label="Toggle navigation"
-          className="text-danger border border-0 navbar-toggler collapsed"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button> */}
-        {/* <button
-          aria-controls="basic-navbar-nav"
-          type="button"
-          aria-label="Toggle navigation"
-          className="text-danger border border-0 navbar-toggler"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button> */}
-        {/* <button
-          aria-controls="basic-navbar-nav"
-          type="button"
-          aria-label="Toggle navigation"
-          className="text-danger border border-0 navbar-toggler"
-        >
-          <BiListUl className="text-danger" />
-        </button> */}
-
-        {/* Stavano quiiiii */}
-
-        {/* <NavDropdown
-          title="Dropdown"
-          id="basic-nav-dropdown"
-          className="text-danger"
-        >
-          <NavDropdown.Item href="#action/3.1">
-            <Form.Control type="text" placeholder="Cerca" />
-          </NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.1">
-            <BiHome className="text-danger me-1" /> Home
-          </NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">
-            <BiGrid className="text-danger me-1" /> Novità
-          </NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">
-            <BiBroadcast className="text-danger me-1" /> Radio
-          </NavDropdown.Item>
-        </NavDropdown> */}
-        {/* <Navbar.Brand href="#home" className="d-flex align-items-center gap-1">
-          <Image src={appleLogo} alt="Logo AppleMusic" className="invert" />
-        </Navbar.Brand>
-        <Nav.Link href="#action/3.1" className="text-danger fw-bold">
-          Accedi
-        </Nav.Link> */}
-        {/* <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Accedi</Nav.Link>
-          </Nav>
-        </Navbar.Collapse> */}
       </Container>
       <Player
         img={img}
         title={title}
         author={author}
         widthPlayer={widthPlayer}
+        language={language}
       />
     </Navbar>
   );
