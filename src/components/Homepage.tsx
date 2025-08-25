@@ -45,7 +45,7 @@ const Homepage = ({
         />
       </Row>
       <Row className=" w-100 flex-nowrap">
-        <Col lg={3} className="ms-auto mt-5 pt-3 px-0 z-1 d-none d-lg-block">
+        <Col lg={3} xxl={2} className="ms-auto mt-5 pt-3 px-0 z-1 d-none d-lg-block">
           <MyNavBig
             img={img}
             title={title}
@@ -54,7 +54,7 @@ const Homepage = ({
             language={language}
           />
         </Col>
-        <Col xs={12} lg={9} className="pe-0">
+        <Col xs={12} lg={9} xxl={10} className="pe-0">
           <div className="p-3 pt-0 pt-lg-5">
             <News language={language} />
             <RadioEpisodes shownEpisodes={shownEpisodes} language={language} />

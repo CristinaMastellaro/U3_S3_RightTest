@@ -17,7 +17,7 @@ const MyNavSmall = ({
   title,
   author,
   widthPlayer,
-  language,
+  language
 }: PlayerProps) => {
   return (
     <Navbar

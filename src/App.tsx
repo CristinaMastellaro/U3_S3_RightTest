@@ -15,7 +15,6 @@ function App() {
     setImg(src);
     setTitle(title);
     setAuthor(author);
-    console.log("src", src);
   };
 
   const [windowWidth, setWidth] = useState(window.innerWidth);
@@ -23,19 +22,37 @@ function App() {
   const [shownEpisodes, setShownEpisodes] = useState(0);
   const [widthPlayer, setWidthPlayer] = useState("");
 
+  const body = document.getElementById("root")
+
+  const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const { width, height } = entry.contentRect;
+
+        // Solo aggiorno se le dimensioni sono cambiate
+        setWidth((prev) => {
+          // console.log("width", width)
+          if (prev !== width) {
+            return width;
+          }
+          return prev;
+        });
+      }
+    });
+
+
   function updateSize() {
-    setWidth(window.innerWidth);
-    if (windowWidth < 700) {
+    if (windowWidth < 754) {
       setShownSongs(6);
       setShownEpisodes(3);
       setWidthPlayer("sm");
     }
-    if (windowWidth >= 700 && windowWidth < 992) {
+    // if (windowWidth >= 754 && windowWidth < 992) {
+    if (windowWidth >= 754 && windowWidth < 976) {
       setShownSongs(8);
       setShownEpisodes(4);
       setWidthPlayer("sm");
     }
-    if (windowWidth >= 992) {
+    if (windowWidth >= 976) {
       setShownSongs(10);
       setShownEpisodes(5);
       setWidthPlayer("lg");
@@ -47,11 +64,15 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    updateSize();
-  }, []);
 
-  window.addEventListener("resize", updateSize);
+  useEffect(() => {
+    observer.observe(body);
+    updateSize()
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [windowWidth]);
 
   // Cose in più da fare: mettere il cursore ovunque, dove serve
 

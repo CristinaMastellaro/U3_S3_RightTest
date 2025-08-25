@@ -8,7 +8,6 @@ import appleLogo from "../assets/assetsDownload/logos/music.svg";
 import "../css/myNavSmall.css";
 import Player from "./Player";
 import PlayerProps from "../types/Player";
-
 const MyNavBig = ({
   img,
   title,
@@ -20,7 +19,7 @@ const MyNavBig = ({
     <Container fluid>
       <Row className=" w-100">
         <Col
-          lg={3}
+          lg={3} xxl={2}
           className="position-fixed start-0 top-0 bottom-0 bg-dark px-4"
         >
           <Image
@@ -50,10 +49,10 @@ const MyNavBig = ({
           </div>
         </Col>
         <Col
-          lg={9}
+          lg={9} xxl={10}
           className="position-fixed top-0 end-0 align-items-center bg-dark bg-opacity-75 px-0"
         >
-          <Row className="align-items-center w-100">
+          <Row className="align-items-center w-100" >
             <Col className="flex-grow-1" lg={10} xxl={11}>
               <Player
                 img={img}

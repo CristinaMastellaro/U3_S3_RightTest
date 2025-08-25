@@ -31,9 +31,15 @@
     width: 100%;
   }
   .second {
-    height: 2em;
+    height: 2.7em;
   }
   .col-card {
     width: 50%;
+  }
+}
+
+@media screen and (min-width: 1375px) {
+  .second {
+    height: 1.5em;
   }
 }

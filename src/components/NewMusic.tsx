@@ -3,6 +3,7 @@ import { Container, Row } from "react-bootstrap";
 import { BiRightArrow } from "react-icons/bi";
 import Daum from "../types/Daum";
 import SingleMusic from "./SingleMusic";
+import Loader from "./Loader";
 
 interface NewMusicProps {
   setPlayer: (src: string, title: string, author: string) => void;
@@ -15,6 +16,7 @@ const NewMusic = ({ setPlayer, shownSongs, language }: NewMusicProps) => {
     "https://striveschool-api.herokuapp.com/api/deezer/search?q=sea";
 
   const [songs, setSongs] = useState<Daum[]>([]);
+  const [isLoading, setIsLoading] = useState(true)
 
   const getSongs = () => {
     fetch(endpoint)
@@ -28,6 +30,7 @@ const NewMusic = ({ setPlayer, shownSongs, language }: NewMusicProps) => {
       .then((data) => {
         setSongs(data.data);
         // console.log("songs", songs);
+        setIsLoading(false)
       })
       .catch((err) => console.log("C'è stato un errore", err));
   };
@@ -43,7 +46,14 @@ const NewMusic = ({ setPlayer, shownSongs, language }: NewMusicProps) => {
         <BiRightArrow className="opacity-50 fs-5" />
       </h2>
       <Row xs={3} md={4} lg={5} xl={6} className="gx-2 gy-5">
-        {songs
+        {isLoading ? <Loader/> : (songs
+              .filter((song, i) => {
+                if (i < shownSongs) return song;
+              })
+              .map((song) => (
+                <SingleMusic key={song.id} song={song} setPlayer={setPlayer} />
+              )))}
+        {/* {songs
           ? songs
               .filter((song, i) => {
                 if (i < shownSongs) return song;
@@ -51,7 +61,7 @@ const NewMusic = ({ setPlayer, shownSongs, language }: NewMusicProps) => {
               .map((song) => (
                 <SingleMusic key={song.id} song={song} setPlayer={setPlayer} />
               ))
-          : ""}
+          : <Loader />} */}
       </Row>
     </Container>
   );
